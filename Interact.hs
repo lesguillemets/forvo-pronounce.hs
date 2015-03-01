@@ -3,6 +3,7 @@ module Interact where
 
 import qualified Network.HTTP.Conduit as HC
 import qualified Data.ByteString.Lazy as L
+import Data.Aeson (decode)
 
 import qualified Response as R
 import qualified Query as Q
@@ -21,4 +22,3 @@ askQuery q = HC.withManager $ \m -> do
                                         ("user-agent", "Haskell-HTTP-Conduit")
                                         ]}) m
     decode $ HC.responseBody response
-

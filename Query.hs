@@ -25,7 +25,6 @@ instance Show SOrder where
     show SDesc = "desk"
 
 data WordPronQuery = WordPronQuery {
-    _key :: String,
     _format :: Format,
     _word :: String,
     _language :: Maybe String,
@@ -40,7 +39,6 @@ data WordPronQuery = WordPronQuery {
 instance Query WordPronQuery where
     _action _ = "word-pronunciations"
     _getQueries q = [
-            ("key",_key q),
             ("format", show $ _format q),
             ("word", _word q)]
             ++ catSndMaybes [

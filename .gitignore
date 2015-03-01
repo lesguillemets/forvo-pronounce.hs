@@ -3,3 +3,7 @@ dist/
 cabal.sandbox.config
 .cabal-sandbox
 *.cabal
+--list-options/
+*.hi
+*.o
+Main
